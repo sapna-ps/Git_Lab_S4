@@ -1,0 +1,104 @@
+<?php 
+ $conn = mysqli_connect("localhost","root","","db_shopping_cart");
+  $stock = $_GET['st'];
+  $prod = $_GET['pi'];
+ $sql= "SELECT * FROM products WHERE prod_id={$stock}";
+
+?>
+
+<!DOCTYPE html>
+<html>
+<head><title>Feedback</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+<style>
+
+.a:link,a:visited
+  {
+ 
+     color:white;
+   padding:17px; 
+   text align:center;
+   text-decoration:none;
+   display:inline-block;
+   border-radius:7px;
+  }
+ 
+*{
+box-sizing:border-box;
+}
+body{
+background:url("m.jpg");
+
+		background-repeat:no-repeat;
+		background-size:cover;
+font-family: 'Open Sans', sans-serif;
+ color:#333;
+ font-size:14px; 
+ background-color:#dadada; 
+ padding:100px;
+ }
+ 
+.form_box{
+width:400px; 
+padding:10px; 
+background-color:white;
+
+}
+input{
+padding:5px;  
+margin-bottom:5px;
+}
+
+
+input[type="submit"]{
+border:none; 
+outlin:none; 
+border-radius: 25px;
+  padding: 10px;
+  width: 100px;
+  color: white;
+  background-color: green;
+  border: none; 
+  }
+  
+input[type="reset"]{
+border:none; 
+outlin:none; 
+border-radius: 25px;
+  padding: 10px;
+  width: 100px;
+  color: white;
+  background-color: green;
+  border: none; 
+  }
+.heading{
+background-color:#ac1219; 
+color:white; height:40px; 
+width:100%; 
+line-height:40px; 
+text-align:center;
+}
+.shadow{
+  -webkit-box-shadow: 0px 0px 17px 1px rgba(0,0,0,0.43);
+-moz-box-shadow: 0px 0px 17px 1px rgba(0,0,0,0.43);
+box-shadow: 0px 0px 17px 1px rgba(0,0,0,0.43);}
+.pic{text-align:center; width:33%; float:center;}
+</style>
+<body>
+	 <a href="u_index.php"><class='btn btn-primary  float-right' ><b>Go back</a></b>
+	
+ <div class="form_box shadow">
+ <form method="post" action="feedback.php">
+ <div class="heading">
+   Feedback Form
+ </div>
+ <br/><center>
+
+ <p>If you have specific feedback, please write to us... </p>
+ <textarea name="content" rows="8" cols="40"></textarea><br>
+  <i><input type="submit" name="submit" value="Submit"></i>
+  <i><input type="reset" name="reset" value="Cancel"></i></center>
+</form>
+ </div>
+</body>
+</html>
